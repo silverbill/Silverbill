@@ -15,7 +15,12 @@ public class Card : HasId
 }
 
 public class CardList : HasId {
-    public int Id {get; set; }
+    public int Id { get; set; }
     public string Summary { get; set; }
     public List<Card> Cards { get; set; }
+}
+
+public class Board : HasId {
+    public int Id { get; set; }
+    public List<CardList> Lists { get; set; }
 }

@@ -62,6 +62,7 @@ public class Handler {
         // do
         Repo<Card>.Register(services, "Cards");
         Repo<CardList>.Register(services, "CardLists");
+        Repo<Board>.Register(services, "Boards");
 
         // Inject an implementation of ISwaggerProvider with defaulted settings applied
         services.AddSwaggerGen();

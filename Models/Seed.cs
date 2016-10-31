@@ -1,11 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Infrastructure;
 
 public static class Seed
 {
@@ -30,15 +25,10 @@ public static class Seed
 
         // print out the tables 
         Console.WriteLine("----------CARDS SEEDED-------------");
-        Console.WriteLine(db.Cards.ToList().Count);
     }
 
     public static void InitializeProd(DB db){
         db.Database.EnsureCreated();
-        db.Database.Migrate();
-    }
-
-    public static void Migrate(DB db){
-        
+        // db.Database.Migrate();
     }
 }

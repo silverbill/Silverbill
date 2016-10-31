@@ -18,4 +18,5 @@ public class DB : DbContext {
 
     public DbSet<Card> Cards { get; set; }
     public DbSet<CardList> CardLists { get; set; }
+    public DbSet<Board> Boards { get; set; }
 }
