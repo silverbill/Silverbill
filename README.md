@@ -1,3 +1,9 @@
+# Omniscience
+
+A .NET Core + React project. 
+
+---
+
 # .NET Core Boilerplate
 
 > note: alpha stages, adding webpack and reactjs.net next
