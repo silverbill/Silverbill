@@ -1,17 +1,17 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
-[Route("/api/card")]
-public class CardController : CRUDController<Card> {
-    public CardController(IRepository<Card> r) : base(r){}
+[Route("/api/merch")]
+public class MerchController : CRUDController<Merch> {
+    public MerchController(IRepository<Merch> r) : base(r){}
 }
 
-[Route("/api/cardlist")]
-public class CardListController : CRUDController<CardList> {
-    public CardListController(IRepository<CardList> r) : base(r){}
+[Route("/api/merchlist")]
+public class MerchListController : CRUDController<MerchList> {
+    public MerchListController(IRepository<MerchList> r) : base(r){}
 }
 
-[Route("/api/board")]
-public class BoardController : CRUDController<Board> {
-    public BoardController(IRepository<Board> r) : base(r){}
+[Route("/api/bizCat")]
+public class bizCatController : CRUDController<bizCat> {
+    public bizCatController(IRepository<bizCat> r) : base(r){}
 }

@@ -7,15 +7,14 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 
-public partial class DB : DbContext {
+public class Proc : HasId
+{
+    public int Id { get; set; }
+    public string procName { get; set; }
+    public string Address { get; set; }
 
-    public DB(DbContextOptions context): base(context){}
-
-    protected override void OnModelCreating(ModelBuilder builder)
-    {
-        base.OnModelCreating(builder);
-    }
-
-   
+    public string Focus {get; set; }
+    
     
 }
+

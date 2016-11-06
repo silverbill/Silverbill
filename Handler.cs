@@ -60,9 +60,9 @@ public class Handler {
         // instead of
         //      services.AddScoped<IRepository<Card>, Repo<Card>>();
         // do
-        Repo<Card>.Register(services, "Cards");
-        Repo<CardList>.Register(services, "CardLists");
-        Repo<Board>.Register(services, "Boards");
+        Repo<Merch>.Register(services, "Merchs");
+        Repo<MerchList>.Register(services, "MerchLists");
+        Repo<bizCat>.Register(services, "bizCats");
 
         // Inject an implementation of ISwaggerProvider with defaulted settings applied
         services.AddSwaggerGen();
@@ -98,10 +98,10 @@ public class Handler {
             app.UseDeveloperExceptionPage();
             app.UseDatabaseErrorPage();
             app.UseStatusCodePages();
-            Seed.InitializeDev(db);
-        } else {
-            Seed.InitializeProd(db);
-        }
+            
+        } 
+        // Seed.Initialize(db, env.IsDevelopment());
+        
 
         // app.UseApplicationInsightsRequestTelemetry();
         // app.UseApplicationInsightsExceptionTelemetry();

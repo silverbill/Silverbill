@@ -1,34 +1,41 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
+// using System;
+// using System.Collections.Generic;
+// using System.Linq;
+// using System.Threading.Tasks;
+// using System.ComponentModel.DataAnnotations;
+// using Microsoft.EntityFrameworkCore;
+// using Microsoft.EntityFrameworkCore.Infrastructure;
 
-public static class Seed
-{
-    public static void InitializeDev(DB db)
-    {   
-        // Look for any Posts.
-        // if (db.Cards.Any() || db.CardLists.Any())
-        db.Database.EnsureDeleted(); // delete then, ...
-        db.Database.EnsureCreated(); // create the tables!! 
+
+// public static class Seed
+// {
+//     public static void Initialize(DB db, bool isDevEnvironment)
+//     {
+//         if(isDevEnvironment){
+//             // db.Database.EnsureDeleted(); // delete then, ...
+//         }
+
+//         db.Database.EnsureCreated(); // create the tables!!
+//         db.Database.Migrate(); // ensure migrations are registered
         
-        CardList todo = new CardList { Summary="Todo items", Cards = new List<Card>() };
+//         if(db.Merchs.Any() || db.MerchLists.Any()) return;
 
-        for(var i = 0; i < 10; i++){
-            todo.Cards.Add(
-                new Card { Title = $"Test Card {i}", Content = $"Test Content {i}",  }
-            );
-        }
+//         bizCat b = new bizCat { Title = "Test Board", MerchLists = new List<MerchList>() };
 
-        db.CardLists.Add(todo);
+//         Action createList = () => {
+//             MerchList toReview = new MerchList { Summary="toReview items", Merchs = new List<Merch>() };
 
-        db.SaveChanges();
+//             for(var i = 0; i < 10; i++)
+//                 toReview.Merchs.Add(new Merch { bizName = $"Test Merch {i}", bizType = $"Test Content {i}",  });
+            
+//             b.MerchLists.Add(toReview);
+//         };
 
-        // print out the tables 
-        Console.WriteLine("----------CARDS SEEDED-------------");
-    }
-
-    public static void InitializeProd(DB db){
-        db.Database.EnsureCreated();
-        // db.Database.Migrate();
-    }
-}
+//         for(var j = 0; j<3; j++)
+//             createList();
+        
+//         db.bizCats.Add(b);
+//         db.SaveChanges(); 
+//         Console.WriteLine("----------Merchs SEEDED-------------");
+//     }
+// }
